@@ -1,0 +1,47 @@
+<ion-header>
+  <!-- de icon moeten even groot worden als die van menu -->
+  <ion-navbar  hideBackButton>
+    <ion-buttons  left>
+      <button ion-button class="icoon" (click)='menupage()'>
+        <ion-icon name='contact'></ion-icon>
+      </button>
+    </ion-buttons>
+    <h1> {{id}} </h1>
+    <ion-buttons end>
+       <button ion-button class="icoon" (click)='homepage()'>
+        <ion-icon name='log-out'></ion-icon>
+      </button> 
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+  <div class="top">
+  </div>
+  <ion-list *ngFor='let persoon of employees'>
+    <ion-item-sliding #item>
+      
+        <ion-item-options side="left">
+          <button ion-button (click)="like(persoon)"  color="secondary">like</button>
+          
+        </ion-item-options>
+        
+        <ion-item-options side="right">
+          <button ion-button (click)="hide(persoon)" color="danger">Dislike</button>
+        </ion-item-options>
+
+  
+    <ion-item class="center" (swipe)="swipe($event)" >
+      <div *ngIf="hideMe">
+      <img height="400" width="400" src="http://127.0.0.1:5984/employees/{{persoon.doc.firstName}} {{persoon.doc.lastName}}/profile.jpg" >
+      
+      <div>
+        <h3>{{persoon.doc.firstName}} {{persoon.doc.lastName}}</h3>
+      </div>
+    </div>
+    </ion-item>
+   
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

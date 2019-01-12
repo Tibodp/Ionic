@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Account Details</ion-title>
+    <ion-buttons left>
+      <button ion-button (click)='homepage()'>
+        <ion-icon name='arrow-back'></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end *ngIf='canDelete'>
+      <button ion-button (click)='delete()'>
+        <ion-icon name='trash'></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h4 text-center margin-top>Welkom</h4>
+  <ion-list>
+    <ion-item>
+      <ion-label color=primary floating>username</ion-label>
+      <ion-input text-left type='text' #username  [(ngModel)]='employee.firstName'></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color=primary floating>Last Name</ion-label>
+      <ion-input text-left type='text'  [(ngModel)]='employee.lastName'></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color=primary floating>Age</ion-label>
+      <ion-input text-left type='text'  [(ngModel)]='employee.age'></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color=primary floating>Email</ion-label>
+      <ion-input text-left type='email' [(ngModel)]='employee.email'></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label color=primary floating>sex</ion-label>
+      <ion-input class="inPassword" type="sex" #sex [(ngModel)]='employee.sex'></ion-input>
+    </ion-item>
+
+  <ion-item>
+    <ion-label color=primary floating>password</ion-label>
+    <ion-input class="inPassword" type="password" #geslacht [(ngModel)]='employee.password'></ion-input>
+  </ion-item>
+  </ion-list>
+
+  <ion-buttons end *ngIf='canAdd'>
+    <div class="center">
+      <button ion-button round style="width:40%" icon-left (click)='addOrUpdate()' color="secondary">
+          <ion-icon name='add-circle'></ion-icon>
+            Add user
+      </button>
+    <br/>
+    </div>
+  </ion-buttons>
+
+  <ion-buttons end *ngIf='canDelete'>
+    <div class="center">
+      <button ion-button round style="width:30%" icon-left (click)='delete()' color="danger">
+        <ion-icon name='trash'></ion-icon>
+          Delete
+      </button>
+    <br/>
+    </div>
+  </ion-buttons>
+
+  <ion-buttons end *ngIf='canUpdate'>
+    <div class="center">
+      <button ion-button round style="width:50%" icon-left (click)='addOrUpdate()' color="orange">
+        <ion-icon name='build'></ion-icon>
+          Update user
+      </button>
+    <br/>
+    </div>
+  </ion-buttons>
+
+  <div class="center">
+    <button ion-button round style="width:50%" icon-left (click)='takePhotograph()'>
+      <ion-icon name="camera"></ion-icon>
+        Take Photograph
+    </button>
+    <br/>
+    <!-- <p class="bottom"> <a tappable color="primary" (click)="login()">Log in</a></p> -->
+  </div>
+</ion-content>

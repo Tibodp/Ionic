@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar hideBackButton>
+    
+    <ion-buttons left>
+      <button ion-button class="icoon" (click)='accountdb()'>
+        <ion-icon name="flame"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-buttons end>
+      <button ion-button class="icoon" (click)='homepage()'>
+        <ion-icon name='log-out'></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<ion-item class="center">
+  <img height="100" width="100" src="http://127.0.0.1:5984/employees/{{id}}/profile.jpg">
+  <div>
+    <h3>{{id}}</h3>
+  </div>
+</ion-item>
+<!-- de instelling methode werkt nog niet-->
+<button ion-button color="light" (click)='instellingen()'>INSTELLINGEN</button>
+
+<ion-list *ngFor='let persoon of employees'>
+<button ion-button color="light" (click)='showDetails(persoon)'>INFO BEWERKEN</button>
+</ion-list>
+</ion-content>
+

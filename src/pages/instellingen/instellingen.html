@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar hideBackButton>
+    <ion-title>instellingen</ion-title>
+    <ion-buttons end>
+      <button ion-button class="icoon" (click)='closeModal()'>
+        <ion-icon name='close'></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list radio-group [(ngModel)]="relationship">
+    <ion-label>Mijn voorkeur</ion-label>
+    <ion-item>
+      <ion-label>Man</ion-label>
+      <ion-radio name="man" value="man" checked></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Vrouw</ion-label>
+      <ion-radio name="vrouw" value="vrouw"></ion-radio>
+    </ion-item>
+  </ion-list>
+</ion-content>

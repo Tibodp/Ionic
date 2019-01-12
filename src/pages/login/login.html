@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-navbar hideBackButton >
+      <br/>
+    <ion-title>LOG IN</ion-title>
+  <ion-buttons >
+    <button ion-button (click)='homepage()'>
+      <ion-icon name='arrow-back'></ion-icon>
+    </button>
+    
+  </ion-buttons>
+ </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h4>username bv: admin admin</h4>
+  <ion-list>
+    <ion-item>
+      <ion-label color=primary floating>username</ion-label>
+      <ion-input class="inUsername" type="text" #username ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color=primary floating>password</ion-label>
+      <ion-input class="inPassword" type="password" #password ></ion-input>
+    </ion-item>
+    <ion-item>
+      <button ion-button class="singnIn" (click)="singnIn()">LOG IN</button>
+    </ion-item>
+
+  </ion-list>
+  <p class="bottom">Don't have an account? <a tappable color="primary" (click)="addEmployee()">Create one</a></p>
+  
+</ion-content>

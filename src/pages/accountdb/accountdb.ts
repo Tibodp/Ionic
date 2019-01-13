@@ -18,7 +18,6 @@ export class  AccountdbPage {
   private likeLijst: Array<string> = [];
   private vrouwenLijst: Array<string> = [];
   private mannenLijst: Array<string> = [];
-  private hideMe:boolean=true;
 
   constructor(
     public navCtrl: NavController,
@@ -94,10 +93,14 @@ export class  AccountdbPage {
  like(employee){
    this.likeLijst.push(employee.id);
    console.log(this.likeLijst);
-   this.hideMe = false;
+   (this.employees).splice(employee, 1);
  }
- hide(){
-  this.hideMe = true;
+ hide(employee){
+  (this.employees).splice(employee, 1);
+ }
+ remove(no){
+   (this.employees).splice(no, 1);
+   console.log("remove");
  }
   login(){
     this.navCtrl.push(LoginPage)

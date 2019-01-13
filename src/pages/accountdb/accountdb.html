@@ -1,5 +1,5 @@
 <ion-header>
-  <!-- de icon moeten even groot worden als die van menu -->
+  <!-- de icon moeten even groot worden als die van menu-->
   <ion-navbar  hideBackButton>
     <ion-buttons  left>
       <button ion-button class="icoon" (click)='menupage()'>
@@ -19,8 +19,8 @@
   
   <div class="top">
   </div>
-  <ion-list *ngFor='let persoon of employees'>
-    <ion-item-sliding #item>
+  <ion-list >
+    <ion-item-sliding *ngFor='let persoon of employees; let i = index;'  #item>
       
         <ion-item-options side="left">
           <button ion-button (click)="like(persoon)"  color="secondary">like</button>
@@ -33,7 +33,7 @@
 
   
     <ion-item class="center" (swipe)="swipe($event)" >
-      <div *ngIf="hideMe">
+      <div >
       <img height="400" width="400" src="http://127.0.0.1:5984/employees/{{persoon.doc.firstName}} {{persoon.doc.lastName}}/profile.jpg" >
       
       <div>
